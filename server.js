@@ -5,14 +5,19 @@ var people = require(path.join(__dirname, 'data/people.json'));
 
 var app = express();
 
-app.use('/client/', express.static(path.join(__dirname, 'client')));
+app.use(express.static('client'));
 app.use('/mockup/', express.static(path.join(__dirname, 'mockup')));
+
+app.get('/', function(req, res) {
+	res.sendFile('/client/app/index.html', { root: process.cwd() });
+});
+
 app.get('/api/people', function(req, res) {
     res.end(JSON.stringify(people, null, '    '));
 });
 
-if (process.env.NODE_ENV !== "development") {
-	app.enable("trust proxy");
+if (process.env.NODE_ENV !== 'development') {
+	app.enable('trust proxy');
 }
 
 var HTTP_PORT = process.env.port || 8080;
@@ -24,6 +29,7 @@ app.listen(HTTP_PORT, function(err) {
 
     console.log(('HTTP server listening on port ' + HTTP_PORT).green);
 
+    console.log('Landing:'.bold + ' http://localhost:' + HTTP_PORT);
     console.log('Mockup:'.bold + ' http://localhost:' + HTTP_PORT + '/mockup/');
     console.log('People data:'.bold + ' http://localhost:' + HTTP_PORT + '/api/people');
 });

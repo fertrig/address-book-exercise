@@ -15,12 +15,12 @@
 
 		return directive;
 
-		function controller(scope) {
-			scope.reverse = false;
+		function controller($scope) {
+			$scope.reverse = false;
 			
 			alphabeticalRepository.getGroups()
 				.then(function(groups) {
-					scope.groups = groups;
+					$scope.groups = groups;
 				});
 		}
 	}

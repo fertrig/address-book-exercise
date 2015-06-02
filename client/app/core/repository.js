@@ -8,7 +8,7 @@
 	/* @ngInject */
 	function Repository($http, $q) {
 
-		var Repo = function(apiPath) {
+		var Repo = function(apiPath, listKey) {
 
 			this.read = read;
 
@@ -28,10 +28,11 @@
 				}
 				else {
 					calling = true;
-					return $http.post(apiPath)
+					return $http.get(apiPath)
 						.then(function(res) {
-							for (var i = 0; i < res.data.length; i++) {
-								data.push(res.data[i]);
+							var list = res.data[listKey];
+							for (var i = 0; i < list.length; i++) {
+								data.push(list[i]);
 							}
 
 							loaded = true;

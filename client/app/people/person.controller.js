@@ -6,10 +6,15 @@
 		.controller("Person", Person);
 
 	/* @ngInject */
-	function Person($scope, $routeParams, peopleRepository) {
-		peopleRepository.getById($routeParams.personId)
+	function Person($scope, $routeParams, peopleRepository, $location) {
+		peopleRepository.findById($routeParams.personId)
 			.then(function(person) {
-				$scope.person = person;
+				if (person) {
+					$scope.person = person;
+				}
+				else {
+					$location.path("/notfound");
+				}
 			});
 	}
 	

@@ -8,11 +8,11 @@
 	/* @ngInject */
 	function peopleRepository(Repository) {
 		
-		var repo = new Repository("/api/people");
+		var repo = new Repository("/api/people", "people");
 
 		var service = {
 			getPeople: getPeople,
-			getById: getById
+			findById: findById
 		};
 
 		return service;
@@ -21,7 +21,7 @@
 			return repo.read();
 		}
 
-		function getById(id) {
+		function findById(id) {
 			return repo.read()
 				.then(function(people) {
 					for (var i = 0; i < people.length; i++) {
@@ -30,7 +30,7 @@
 						}
 					}
 
-					throw new Error("Person not found");
+					return null;
 				});
 		}
 	}

@@ -2,5 +2,5 @@
 	"use strict";
 
 	angular
-		.module("app", ["app.core", "app.people"]);
+		.module("app", ["app.people"]);
 })();

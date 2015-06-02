@@ -1,10 +1,10 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
-		pkg: grunt.file.readJSON("package.json"),
+		pkg: grunt.file.readJSON('package.json'),
 		watch: {
 			scripts: {
-				files: ['client/app/**/*.jade'],
-				tasks: ['jade'],
+				files: ['client/app/**/*.jade', 'client/content/style.styl'],
+				tasks: ['build'],
 				options: {
 					spawn: false,
 				},
@@ -30,10 +30,21 @@ module.exports = function(grunt) {
 				]
 		    }
 		},
+		stylus: {
+            compile: {
+                options: {
+                    paths: [ 'client/content' ]
+                },
+                files: {
+                    'client/content/style.css': 'client/content/style.styl'
+                }
+            }
+        }
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jade');
+	grunt.loadNpmTasks('grunt-contrib-stylus');
 
-	grunt.registerTask("build", ["jade"]);
+	grunt.registerTask('build', ['jade', 'stylus']);
 };

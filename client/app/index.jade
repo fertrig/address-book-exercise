@@ -4,13 +4,14 @@ html(ng-app="app")
 		meta(charset="utf-8")
 
 		link(rel="stylesheet", type="text/css", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+		link(rel="stylesheet", type="text/css", href="/content/style.css")
 	body
 
-		.row
-			.col-xs-4
+		.main-container
+			.alphabetical-list-container
 				alphabetical-list
 
-			.col-xs-8
+			.person-container
 				div(ng-view)
 
 
@@ -22,9 +23,10 @@ html(ng-app="app")
 		script(type="text/javascript", src="/app/core/core.module.js")
 		script(type="text/javascript", src="/app/core/repository.js")
 
-		script(type="text/javascript", src="/app/teams/teams.module.js")
-		script(type="text/javascript", src="/app/teams/config.route.js")
-		script(type="text/javascript", src="/app/teams/team.controller.js")
-		script(type="text/javascript", src="/app/teams/teamsList.directive.js")
-		script(type="text/javascript", src="/app/teams/teams.repository.js")
-		script(type="text/javascript", src="/app/teams/teamsSelector.directive.js")
+		script(type="text/javascript", src="/app/people/people.module.js")
+		script(type="text/javascript", src="/app/people/alphabetical.repository.js")
+		script(type="text/javascript", src="/app/people/alphabeticalList.directive.js")
+		script(type="text/javascript", src="/app/people/config.route.js")
+		script(type="text/javascript", src="/app/people/people.repository.js")
+		script(type="text/javascript", src="/app/people/person.controller.js")
+		

@@ -79,6 +79,94 @@
                     "title": "Directory of IT"
                 }
             ]
+        },
+        {
+            "id": "5",
+            "name": "Steve Kiboli",
+            "education": [
+                {
+                    "institution": "Boston University",
+                    "startYear": 2001,
+                    "endYear": 2005,
+                    "degree": "Computer Engineering"
+                },
+                {
+                    "institution": "MIT",
+                    "startYear": 2006,
+                    "endYear": 2007,
+                    "degree": "Computer Science"
+                }
+            ],
+
+            "workExperience": [
+                {
+                    "institution": "United Products",
+                    "startYear": 1998,
+                    "title": "Test Architect"
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "name": "Jane Rogers",
+            "education": [
+                {
+                    "institution": "Boston University",
+                    "startYear": 2001,
+                    "endYear": 2005,
+                    "degree": "Computer Engineering"
+                },
+                {
+                    "institution": "MIT",
+                    "startYear": 2006,
+                    "endYear": 2007,
+                    "degree": "Computer Science"
+                }
+            ],
+
+            "workExperience": [
+                {
+                    "institution": "United Products",
+                    "startYear": 1998,
+                    "title": "Junior Developer"
+                },
+                {
+                    "institution": "ABC Company",
+                    "startYear": 2000,
+                    "title": "Senior Developer"
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "name": "Valentino Christopher Lonergan",
+            "education": [
+                {
+                    "institution": "Boston University",
+                    "startYear": 2001,
+                    "endYear": 2005,
+                    "degree": "Computer Engineering"
+                },
+                {
+                    "institution": "MIT",
+                    "startYear": 2006,
+                    "endYear": 2007,
+                    "degree": "Computer Science"
+                }
+            ],
+
+            "workExperience": [
+                {
+                    "institution": "United Products",
+                    "startYear": 1998,
+                    "title": "Junior Developer"
+                },
+                {
+                    "institution": "ABC Company",
+                    "startYear": 2000,
+                    "title": "Senior Developer"
+                }
+            ]
         }
     ]
 }

@@ -1,4 +1,12 @@
-.group(ng-repeat="group in groups | orderBy:'letter':reverse")
-	.letter {{group.letter}}
-	.person(ng-repeat="person in group.people")
-		a.name(href="#/person/{{person.id}}") {{person.name}}
+.alphabetical-list
+
+	.btn-group.pull-right
+		button.btn.btn-default(type="button", aria-label="Sort A-Z", ng-click="reverse=false", ng-class="{ active: !reverse }")
+			span.glyphicon.glyphicon-sort-by-alphabet(aria-hidden="true")
+		button.btn.btn-default(type="button", aria-label="Sort Z-A", ng-click="reverse=true", ng-class="{ active: reverse }")
+			span.glyphicon.glyphicon-sort-by-alphabet-alt(aria-hidden="true")
+
+	.group(ng-repeat="group in groups | orderBy:'letter':reverse")
+		h4 {{group.letter}}
+		.person(ng-repeat="person in group.people")
+			a.name(href="#/person/{{person.id}}") {{person.name}}

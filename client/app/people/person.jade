@@ -1,28 +1,31 @@
-#person
-	.photo
-		img(src="/mockup/avatar.png")
+.person
+	.row
+		.col-xs-6
+			.row
+				.col-xs-3
+					img.img-responsive.photo(src="/mockup/avatar.png")
+				.col-xs-9
+					h2 {{person.name}}
 
-	h2 {{person.name}}
+			h4 Education
 
-	h4 Education
+			.row(ng-repeat="edu in person.education | orderBy:'startYear':true")
+				.col-xs-3
+					strong {{edu.startYear}}
+					strong(ng-show="edu.endYear") &nbsp;-&nbsp;{{edu.endYear}}
 
-	table
-		tr(ng-repeat="edu in person.education | orderBy:'startYear':true")
-			td 
-				strong {{edu.startYear}}
-				strong(ng-show="edu.endYear") | {{edu.endYear}}
-			td
-				strong {{edu.institution}}
-				span {{edu.degree}}
+				.col-xs-9
+					strong {{edu.institution}}
+					br
+					span {{edu.degree}}
 
+			h4 Experience
 
-	h4 Experience
-
-	table
-		tr(ng-repeat="work in person.workExperience | orderBy:'startYear':true")
-			td 
-				strong {{work.startYear}}
-				strong(ng-show="work.endYear") | {{work.endYear}}
-			td
-				strong {{work.institution}}
-				span {{work.title}}
+			.row(ng-repeat="work in person.workExperience | orderBy:'startYear':true")
+				.col-xs-3 
+					strong {{work.startYear}}
+					strong(ng-show="work.endYear") | {{work.endYear}}
+				.col-xs-9
+					strong {{work.institution}}
+					br
+					span {{work.title}}

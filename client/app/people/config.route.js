@@ -14,6 +14,10 @@
 			.when("/person/:personId", {
 				templateUrl: "app/people/person.html",
 				controller: "Person"
-			});
+			})
+			.when("/notfound", {
+				templateUrl: "app/people/not-found.html"
+			})
+			.otherwise("/notfound");
 	};
 })();

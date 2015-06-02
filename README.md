@@ -26,3 +26,13 @@ http://localhost:8080
 
 **People Data:**
 http://localhost:8080/api/people
+
+## Try it out
+
+Running on:
+
+https://address-book-exercise.herokuapp.com/
+
+Or, deploy using your own heroku account:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)

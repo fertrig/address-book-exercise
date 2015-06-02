@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== 'development') {
 	app.enable('trust proxy');
 }
 
-var HTTP_PORT = process.env.port || 8080;
+var HTTP_PORT = process.env.PORT || 8080;
 
 app.listen(HTTP_PORT, function(err) {
     if (err) {

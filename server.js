@@ -5,13 +5,17 @@ var people = require(path.join(__dirname, 'data/people.json'));
 
 var app = express();
 
-
+app.use('/client/', express.static(path.join(__dirname, 'client')));
 app.use('/mockup/', express.static(path.join(__dirname, 'mockup')));
 app.get('/api/people', function(req, res) {
     res.end(JSON.stringify(people, null, '    '));
 });
 
-var HTTP_PORT = 8080;
+if (process.env.NODE_ENV !== "development") {
+	app.enable("trust proxy");
+}
+
+var HTTP_PORT = process.env.port || 8080;
 
 app.listen(HTTP_PORT, function(err) {
     if (err) {

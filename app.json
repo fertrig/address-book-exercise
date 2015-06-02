@@ -1,0 +1,6 @@
+{
+	"name": "Address Book Exercise",
+	"description": "Coding exercise using an address book.",
+	"repository": "https://github.com/fertrig/address-book-exercise",
+	"keywords": ["node", "angular"]
+}

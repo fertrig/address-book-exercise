@@ -1,2 +1,5 @@
 .git/
 node_modules/
+.DS_Store
+client/bower_components/
+client/**/*.html

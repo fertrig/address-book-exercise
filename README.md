@@ -6,6 +6,11 @@ Programming Exercise: Address Book
 2. Install Dependencies
 ```bash
 npm install
+bower install
+```
+3. Build Jade Views
+```bash
+grunt build
 ```
 
 ## Run Server

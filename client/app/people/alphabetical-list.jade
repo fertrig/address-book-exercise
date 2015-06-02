@@ -1,0 +1,4 @@
+.group(ng-repeat="group in groups | orderBy:'letter':reverse")
+	.letter {{group.letter}}
+	.person(ng-repeat="person in group.people")
+		a.name(href="#/person/{{person.id}}") {{person.name}}

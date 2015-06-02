@@ -1,0 +1,30 @@
+doctype
+html(ng-app="app")
+	head
+		meta(charset="utf-8")
+
+		link(rel="stylesheet", type="text/css", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+	body
+
+		.row
+			.col-xs-4
+				alphabetical-list
+
+			.col-xs-8
+				div(ng-view)
+
+
+		script(type="text/javascript", src="/bower_components/angular/angular.js")
+		script(type="text/javascript", src="/bower_components/angular-route/angular-route.js")
+
+		script(type="text/javascript", src="/app/app.module.js")
+
+		script(type="text/javascript", src="/app/core/core.module.js")
+		script(type="text/javascript", src="/app/core/repository.js")
+
+		script(type="text/javascript", src="/app/teams/teams.module.js")
+		script(type="text/javascript", src="/app/teams/config.route.js")
+		script(type="text/javascript", src="/app/teams/team.controller.js")
+		script(type="text/javascript", src="/app/teams/teamsList.directive.js")
+		script(type="text/javascript", src="/app/teams/teams.repository.js")
+		script(type="text/javascript", src="/app/teams/teamsSelector.directive.js")

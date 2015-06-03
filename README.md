@@ -21,7 +21,7 @@ node server.js
 	* Routing handles person ids that do not exist
 1. The people list is an angular directive
 1. The person details are using an angular view
-1. There is a repository service that caches people data after it is first loaded. This service also makes sure that the server is only called once.
+1. There is a repository service that caches the list of people. Multiple views bind to the same list.
 1. There is an alphabetical service that handles the grouping of people per letter.
 1. Things left out due to time constraints:
   * Uglyfying and concat of js and css assets
